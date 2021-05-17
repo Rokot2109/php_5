@@ -4,11 +4,10 @@ $id = (int)$_GET['id'];
 $message ="";
 $result = mysqli_query($db, "SELECT * FROM images WHERE id = {$id}");
 if($result->num_rows != 0) $filename = mysqli_fetch_assoc($result);
+elseif($result != int) $message = "Такого изображения нет в бд";
 else $message = "Такого изображения нет в бд";
 
-
 ?>
-
 <!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
